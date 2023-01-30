@@ -12,14 +12,15 @@ import java.util.List;
 @Service
 public class PerfectNumberServiceImpl implements PerfectNumberService {
     @Override
-    public List<BigInteger> getPerfectNumbers(BigInteger[] numbers) {
+    public List<BigInteger> getPerfectNumbers(List<BigInteger> numbers) {
         List<BigInteger> perfectNumbers = new ArrayList<>();
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (isPerfectNumber(numbers[i])) {
-                perfectNumbers.add(numbers[i]);
-            }
-        }
+            numbers.stream().parallel().forEach(number -> {
+                if (isPerfectNumber(number)) {
+                    perfectNumbers.add(number);
+                }
+            });
+
         return perfectNumbers;
     }
 

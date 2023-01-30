@@ -4,5 +4,5 @@ import java.math.BigInteger;
 import java.util.List;
 
 public interface PerfectNumberService {
-    List<BigInteger> getPerfectNumbers(BigInteger[] numbers);
+    List<BigInteger> getPerfectNumbers(List<BigInteger> numbers);
 }

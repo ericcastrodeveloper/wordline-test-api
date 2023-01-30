@@ -21,7 +21,7 @@ public class PerfectNumberController {
     }
 
     @PostMapping
-    public ResponseEntity<List<BigInteger>> getPerfectNumbers(@RequestBody BigInteger[] numbers){
+    public ResponseEntity<List<BigInteger>> getPerfectNumbers(@RequestBody List<BigInteger> numbers){
         List<BigInteger> response = service.getPerfectNumbers(numbers);
         return ResponseEntity.ok(response);
     }
